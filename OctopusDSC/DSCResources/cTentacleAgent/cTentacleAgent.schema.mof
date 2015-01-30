@@ -12,4 +12,6 @@ class cTentacleAgent : OMI_BaseResource
   [Write] UInt32 ListenPort;
   [Write] string DefaultApplicationDirectory;
   [Write] boolean UseHostName;
+  [Write] string TentacleDownloadUrl;
+  [Write] string TentacleDownloadUrl64;
 };
