@@ -23,13 +23,14 @@ Configuration SampleConfig
             Name = "Tentacle";
  
             # Registration - all parameters required
-            ApiKey = $ApiKey;
-            OctopusServerUrl = $OctopusServerUrl;
-            Environments = $Environments;
-            Roles = $Roles;
- 
-            # Optional settings
-            ListenPort = $ListenPort;
+            ApiKey = "API-ABCDEF12345678910";
+            OctopusServerUrl = "https://demo.octopusdeploy.com/";
+            Environments = @("Development");
+            Roles = @("web-server", "app-server");
+            UseHostName = $true
+
+           	# Optional settings
+            ListenPort = 10933;
             DefaultApplicationDirectory = "C:\Applications"
         }
     }
