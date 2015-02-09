@@ -116,7 +116,7 @@ function Set-TargetResource
         $msiLog = "$HomeDirectory\Tentacle.msi.uninstall.log"
         if (test-path $tentaclePath)
         {
-            $msiExitCode = (Start-Process -FilePath "msiexec.exe" -ArgumentList "/x $tentaclePath /quiet /l*v $msiLog" -Wait -Passthru).ExitCode
+            $msiExitCode = (Start-Process -FilePath "msiexec.exe" -ArgumentList "/x `"$tentaclePath`" /quiet /l*v `"$msiLog`"" -Wait -Passthru).ExitCode
             Write-Verbose "Tentacle MSI installer returned exit code $msiExitCode"
             if ($msiExitCode -ne 0) 
             {
@@ -281,7 +281,7 @@ function New-Tentacle
   
     Write-Verbose "Installing MSI..."
     $msiLog = "$HomeDirectory\Tentacle.msi.log"
-    $msiExitCode = (Start-Process -FilePath "msiexec.exe" -ArgumentList "/i $tentaclePath /quiet /l*v $msiLog" -Wait -Passthru).ExitCode
+    $msiExitCode = (Start-Process -FilePath "msiexec.exe" -ArgumentList "/i `"$tentaclePath`" /quiet /l*v `"$msiLog`"" -Wait -Passthru).ExitCode
     Write-Verbose "Tentacle MSI installer returned exit code $msiExitCode"
     if ($msiExitCode -ne 0) 
     {
