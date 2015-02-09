@@ -131,7 +131,9 @@ function Set-TargetResource
     elseif ($Ensure -eq "Present" -and $currentResource["Ensure"] -eq "Absent") 
     {
         Write-Verbose "Installing Tentacle..."
-        New-Tentacle -name $Name -apiKey $ApiKey -octopusServerUrl $OctopusServerUrl -port $ListenPort -environments $Environments -roles $Roles -HomeDirectory $HomeDirectory -DefaultApplicationDirectory $DefaultApplicationDirectory -useHostName $UseHostName -tentacleDownloadUrl $tentacleDownloadUrl -tentacleDownloadUrl64 $tentacleDownloadUrl64
+        New-Tentacle -name $Name -apiKey $ApiKey -octopusServerUrl $OctopusServerUrl -port $ListenPort -environments $Environments -roles $Roles `
+          -HomeDirectory $HomeDirectory -DefaultApplicationDirectory $DefaultApplicationDirectory -useHostName $UseHostName `
+          -tentacleDownloadUrl $tentacleDownloadUrl -tentacleDownloadUrl64 $tentacleDownloadUrl64
         Write-Verbose "Tentacle installed!"
     }
 
